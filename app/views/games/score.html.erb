@@ -1,0 +1,13 @@
+<% require 'json'
+%>
+<% require 'open-uri'
+%>
+
+<h1><%= @word %></h1>
+
+<% if @english_word %>
+<%= "Congratulation you won!" %>
+<% else %>
+<%= "Unfourtunately this word isn´t in the dictionary" %>
+<% end %>
+<%= link_to "play a new game", new_path %>

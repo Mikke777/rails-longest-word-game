@@ -1,0 +1,14 @@
+<h1>Welcome to: Longest Word Game</h1>
+<h2>New Game</h2>
+
+
+<% @letter_array.each do |letter| %>
+<div class="letterboxes"><%= letter %></div>
+<% end %>
+
+<form action="/score" data-turbo="false" method="POST">
+<label for="input">What is the longest word you can find?</label>
+  <input type="text" name="word" placeholder="type here...">
+  <input type="submit" value="Play">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>

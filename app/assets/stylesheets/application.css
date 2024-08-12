@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+.letterboxes {
+  display: inline-block;
+  background-color: blue;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+label {
+  display: block;
+}
