@@ -5,7 +5,7 @@
 
 <h1><%= @word %></h1>
 
-<% if @english_word %>
+<% if @user_found && @included %>
 <%= "Congratulation you won!" %>
 <% else %>
 <%= "Unfourtunately this word isn´t in the dictionary" %>

@@ -15,17 +15,18 @@ class GamesController < ApplicationController
     url = "https://dictionary.lewagon.com/#{word}"
     user_serialized = URI.open(url).read
     user = JSON.parse(user_serialized)
-    user[:"found"]
-    raise
+    @user_found = user["found"]
   end
 
   def score
     @word = params[:word]
     @english_word = english_check(@word)
-    @letter = params[:letter_array]
-
-    def inside
-      @letter_array.include? @letter
-    end
+    @letter = params[:letter_array].split
+    @included = included?(@word, @letter)
+    p @english_word
+    p @included
+  end
+  def included?(word, letters)
+    word.chars.all? { |letter| word.count(letter) <= letters.count(letter) }
   end
 end
